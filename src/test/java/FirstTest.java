@@ -1,16 +1,10 @@
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.util.concurrent.TimeUnit;
-
 
 public class FirstTest {
 
@@ -18,6 +12,7 @@ public class FirstTest {
     public void searchYandexMarket() {
         //Создаем экземпляр WebDriver
         WebDriver driver = new FirefoxDriver();
+        //Разворачиваем окно браузера во весь экран
         driver.manage().window().maximize();
         //Открываем гугл
         driver.get("https://www.google.ru");
@@ -35,7 +30,6 @@ public class FirstTest {
         Assert.assertEquals(firstSearchResultText, "Яндекс.Маркет — выбор и покупка товаров из проверенных ...");
         //Открываем яндекс маркет
         firstSearchResult.click();
-
         //Закрываем WebDriver
         driver.quit();
     }
